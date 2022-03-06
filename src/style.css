@@ -1,8 +1,87 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;800&display=swap');
+
+:root {
+  --clr-neon: hsl(550 100% 57%);
+  --clr-bg: hsl(600 21% 16%);
+  --clr-screen: hsl(240, 47%, 16%);
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--clr-bg);
+  font-family: 'Orbitron', sans-serif;
+  color: var(--clr-neon);
+  /* padding-right: 10rem; */
+}
+
+.neon-button {
+  font-size: 4rem;
+
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--clr-neon);
+  border: var(--clr-neon) 4px solid;
+  padding: .25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 
+  0 0 0.1255em hsl(0 0% 100% / 0.5),
+  0 0 .125em currentColor ;
+}
+
+button {
+  margin-left: .25em;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+  background: var(--clr-neon);
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.row {
+  padding: .5em;
+}
+
+.screen {
+  background-color: var(--clr-screen);
+  width: 130vh;
+  height: 300px;
+
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+
+  max-width: 1300px;
+  min-width: 1300px;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+p {
+  font-size: 3rem;
+  text-align: end;
+  margin: 3rem 2rem;
+}
+
+.output {
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+.body {
+  width: 135vh;
+  max-width: 1300px;
+  min-width: 1300px;
+}
+

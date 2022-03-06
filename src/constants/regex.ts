@@ -1,0 +1,1 @@
+export const regex = /\d+(\.\d+)?|π|cos|tan|arcsin|arccos|arctan|log|ln|sqrt|cbrt|sin|[()*/^+-]/g

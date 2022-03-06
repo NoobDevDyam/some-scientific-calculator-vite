@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@psse-cpu/tokenizer": "^0.1.1",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
