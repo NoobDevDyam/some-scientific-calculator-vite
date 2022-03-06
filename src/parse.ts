@@ -15,7 +15,9 @@ export default function parse() {
   let queue: string = ''
   const infix = inputString.innerHTML // set input as infix
 
-  const tokenizer = new InfixTokenizer(infix)
+  const tokenizer = new InfixTokenizer(infix, ['π', 'log', 'sin', 'cos', 'tan', 
+                                        'arcsin', 'arccos',
+                                        'arctan', 'ln', 'sqrt', 'cbrt'])
 
   // operator stack
   const stack = new Stack<string>()
@@ -26,6 +28,7 @@ export default function parse() {
 
     let topStack: string = stack.peek()
 
+    console.log(token)
     if (!isNaN(Number(token)) || token === 'π') {
       queue += token + " "
 
@@ -49,12 +52,14 @@ export default function parse() {
       const tokenAssociativity = checkAssociativity(token)
 
       if (!stack.isEmpty()) {
-        while (operators.indexOf(topStack) !== -1 && topStack !== '(' &&
+        if (operators.indexOf(topStack) !== -1 &&
           topPrecedence > tokenPrecedence || topPrecedence === tokenPrecedence &&
           tokenAssociativity === 'left'
         ) {
-          queue += stack.pop() + " "
-          topStack = stack.peek()
+          if (topStack !== '(') {
+            queue += stack.pop() + " "
+            topStack = stack.peek()
+          }
         }
       }
 
